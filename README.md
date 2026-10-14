@@ -7,9 +7,9 @@ Script simples pra selecionar arquivos pra backup
 2 - Adicionar os paths de cada arquivo a ser salvo na lista backup_list[]
 * Ex:
 * backup_list[
-*   "C:\Users\lfree\OneDrive\Desktop\Projetos\testes de script\arquivo 1.txt",
-*   "C:\Users\lfree\OneDrive\Desktop\Projetos\testes de script\arquivo 2.txt",
-*   "C:\Users\lfree\OneDrive\Desktop\Projetos\testes de script\arquivo 3.txt"
-* ]
+   "C:\Users\lfree\OneDrive\Desktop\Projetos\testes de script\arquivo 1.txt",
+   "C:\Users\lfree\OneDrive\Desktop\Projetos\testes de script\arquivo 2.txt",
+   "C:\Users\lfree\OneDrive\Desktop\Projetos\testes de script\arquivo 3.txt"
+  ]
 
 * Contatar o Luigi em caso de sugestões ou feedback
