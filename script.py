@@ -6,18 +6,19 @@ import shutil
 
 # edit files for backup
 backup_list = [
-    r"<set files to backup here>",
-    r"<set files to backup here>"
+    r"C:\Users\lfree\OneDrive\Desktop\Projetos\testes de script\arquivo 1.txt",
+    r"C:\Users\lfree\OneDrive\Desktop\Projetos\testes de script\arquivo 2.txt"
 ]
 
 # Chose option:
-# DEFAULT: destiny folder will be created in the parent of the file
-# CUSTOM: destiny folder will be created in the path specified in the config dictionary, recommended to goup diferent files backups in a same folder
+# DEFAULT: Destiny folder will be created in the parent of the file
+# CUSTOM: Destiny folder will be created in the path specified in the config dictionary, recommended to goup diferent files backups in a same folder
+# PARENT: Destiny folder willl be created in the parent folder where the sript is running.
 
 # CUSTOM PATH; put the folder where the script must crate a backup folder, if you use the custom option.
 
 config = {
-    "backup_option" : "DEFAULT",
+    "backup_option" : "PARENT",
     "custom_path" : r"<set a custom path here>"
 }
 
@@ -40,6 +41,8 @@ def create_backups():
                     destiny_folder = file_path.parent / "backups" / TODAY
                 case "CUSTOM":
                     destiny_folder = Path(config["custom_path"]) / TODAY
+                case "PARENT":
+                    destiny_folder = Path(__file__).parent / "backups" / TODAY
             destiny_folder.mkdir(parents=True, exist_ok=True) 
 
             # config the new name to the choosen folder
@@ -54,7 +57,12 @@ def create_backups():
             except Exception as e:
                 print(f"error to create bacup file for {file}. Motivo: {e}")
 
+
+input(f"Starting BACKUP process, please close every .OFFICE file you want to backup.\n" \
+      f"The backup save options is setted to: {config['backup_option']}.\n" \
+      f"Press ENTER to continue...\n")
 create_backups()
+input("\nPress ENTER to exit...")
 
 
 # Author: luigifernando.reenkober@zf.com
